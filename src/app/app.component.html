@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Country Codes</title>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="nav">
+    <div>
+      <h1>Country Codes</h1>
+    </div>
+    <div>
+      <input type="text" name="search" placeholder="Search..." [(ngModel)]="search">
+      <button type="submit">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+
+  </div>
+  <br>
+  <div class="table">
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Country</th>
+        <th>Calling Code</th>
+      </tr>
+      <tr *ngFor="let item of items | myFilter: search">
+        <td>{{item.id}}</td>
+        <td>{{item.country.country}}</td>
+        <td>{{item.callingCode}}</td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>
